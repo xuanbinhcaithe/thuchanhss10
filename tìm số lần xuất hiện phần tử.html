@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tìm số lần xuất hiện của phần tử trong chuỗi</title>
+</head>
+<body>
+<script>
+    function disArr(arr) {
+        for (let i=0;i<arr.length;i++) {
+            document.write(arr[i]+' ');
+            if (i%10==9) {
+                document.write("<br>");
+            }
+        }
+    }
+
+    function taoMang(num) {
+        for (let i=0;i<100;i++) {
+            num[i]=Math.floor(Math.random()*100+1);
+        }
+        return num;
+    }
+
+    function findMin(arr) {
+        let min=arr[0];
+        for (let i=0;i<arr.length;i++) {
+            if (arr[i]<min) {
+                min=arr[i];
+            }
+        }
+        return min;
+    }
+    function findMax (arr) {
+        let max=arr[0];
+        for (let i=0;i<arr.length;i++) {
+            if (arr[i]>max) {
+                max=arr[i];
+            }
+        }
+        return max;
+    }
+    function count (arr,value) {
+        let count=0;
+        for (let i=0;i<arr.length;i++) {
+            if (arr[i]==value) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    let mang1=[];
+    taoMang(mang1);
+    disArr(mang1);
+    let min=findMin(mang1);
+    let max=findMax(mang1);
+    let count1=count(mang1,10);
+    document.write('10 xuất hiên '+count1+ "lần <br>");
+    document.write("giá trị nhỏ nhất trong mảng trên là "+ min+"<br>");
+    document.write('gia trị lớn nhất trong mảng là '+ max);
+
+
+</script>
+</body>
+</html>
